@@ -5,14 +5,14 @@ public class Tabuada {
 	private double multiplicando;
 	private double multiplicadorMinimo;
 	private double multiplicadorMaximo;
-	private double intervalo;
+//	private double intervalo;
 
 	// Constructor
-	public Tabuada(double multiplicando, double multiplicadorMinimo, double multiplicadorMaximo, double intervalo) {
+	public Tabuada(double multiplicando, double multiplicadorMinimo, double multiplicadorMaximo) {
 		setMultiplicando(multiplicando);
 		setMultiplicadorMinimo(multiplicadorMinimo);
 		setMultiplicadorMaximo(multiplicadorMaximo);
-		setIntervalo(intervalo);
+//		setIntervalo(intervalo);
 
 	}
 
@@ -45,13 +45,13 @@ public class Tabuada {
 
 	// get e set do intervalo
 
-	public double getIntervalo() {
-		return intervalo;
-	}
-
-	public void setIntervalo(double intervalo) {
-		this.intervalo = intervalo;
-	}
+//	public double getIntervalo() {
+//		return intervalo;
+//	}
+//
+//	public void setIntervalo(double intervalo) {
+//		this.intervalo = intervalo;
+//	}
 
 	// Retornar a tabuada com os cálculos
 	public void mostrarTabuada() {
@@ -71,7 +71,7 @@ public class Tabuada {
 			System.out.print(multiplicando + " X " + multiplicadorMinimo + " = "); // retorna Estrutura ("7 x 8 =")
 			System.out.println(produto); // retorna resultado e quebra a linha
 
-			multiplicadorMinimo += intervalo; // Para seguir ao proximo numero
+			multiplicadorMinimo++; //+= intervalo; // Para seguir ao proximo numero
 
 		}
 		System.out.println("===========================");
