@@ -54,12 +54,15 @@ public class Tabuada {
 //	}
 
 	// Retornar a tabuada com os cálculos
-	public void mostrarTabuada() {
+	public String[] mostrarTabuada() {
 		if (multiplicadorMinimo > multiplicadorMaximo) {
 			double troca = multiplicadorMinimo;
 			multiplicadorMinimo = multiplicadorMaximo;
 			multiplicadorMaximo = troca;
 		}
+		
+		int tamanhoTabuada = (int) (multiplicadorMinimo - multiplicadorMaximo +1);
+		String[] tabuada = new String[tamanhoTabuada];
 
 		System.out.println("===========================");
 		System.out.println("TABUADA DO " + multiplicando);
@@ -74,7 +77,16 @@ public class Tabuada {
 			multiplicadorMinimo++; //+= intervalo; // Para seguir ao proximo numero
 
 		}
+		double produto;
+		
+		for (int i = 0 ; i< tamanhoTabuada ; i++) {
+			produto = multiplicando * multiplicadorMinimo;
+			tabuada[i] = (multiplicando + " X " + multiplicadorMinimo + "=" + produto);
+			multiplicadorMinimo++;
+		}
 		System.out.println("===========================");
+		return tabuada;
 	}
+	
 
 }

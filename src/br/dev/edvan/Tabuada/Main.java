@@ -10,8 +10,6 @@ public class Main {
 		System.out.println("Hello world!");
 		TelaTabuada tela = new TelaTabuada();
 		tela.criarTela("Tabuada DS1MA");
-
-
 	}
 	
 
