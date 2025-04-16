@@ -61,30 +61,22 @@ public class Tabuada {
 			multiplicadorMaximo = troca;
 		}
 		
-		int tamanhoTabuada = (int) (multiplicadorMinimo - multiplicadorMaximo +1);
+		int tamanhoTabuada = (int) (multiplicadorMaximo - multiplicadorMinimo +1);
 		String[] tabuada = new String[tamanhoTabuada];
 
 		System.out.println("===========================");
 		System.out.println("TABUADA DO " + multiplicando);
 		System.out.println("---------------------------");
 
-		while (multiplicadorMinimo <= multiplicadorMaximo) { // loop
-			double produto = multiplicando * multiplicadorMinimo; // Cálculo
-
-			System.out.print(multiplicando + " X " + multiplicadorMinimo + " = "); // retorna Estrutura ("7 x 8 =")
-			System.out.println(produto); // retorna resultado e quebra a linha
-
-			multiplicadorMinimo++; //+= intervalo; // Para seguir ao proximo numero
-
-		}
 		double produto;
-		
-		for (int i = 0 ; i< tamanhoTabuada ; i++) {
-			produto = multiplicando * multiplicadorMinimo;
+		int i = 0;
+		while (i < tamanhoTabuada) { // loop
+			produto = multiplicando * multiplicadorMinimo; //Cálculo
 			tabuada[i] = (multiplicando + " X " + multiplicadorMinimo + "=" + produto);
 			multiplicadorMinimo++;
+			i++;
+
 		}
-		System.out.println("===========================");
 		return tabuada;
 	}
 	
