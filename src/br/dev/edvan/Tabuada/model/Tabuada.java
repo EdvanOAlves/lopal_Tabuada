@@ -64,9 +64,9 @@ public class Tabuada {
 		int tamanhoTabuada = (int) (multiplicadorMaximo - multiplicadorMinimo +1);
 		String[] tabuada = new String[tamanhoTabuada];
 
-		System.out.println("===========================");
-		System.out.println("TABUADA DO " + multiplicando);
-		System.out.println("---------------------------");
+//		System.out.println("===========================");
+//		System.out.println("TABUADA DO " + multiplicando);
+//		System.out.println("---------------------------");
 
 		double produto;
 		int i = 0;

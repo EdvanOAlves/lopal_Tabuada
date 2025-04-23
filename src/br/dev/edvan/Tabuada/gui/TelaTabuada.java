@@ -1,11 +1,8 @@
 package br.dev.edvan.Tabuada.gui;
 
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -47,8 +44,8 @@ public class TelaTabuada {
 
 		// Instanciando e configurando o JFrame
 		JFrame tela = new JFrame();
-		tela.setTitle(this.tituloDaTela);
-		tela.setSize(265, 600);
+		tela.setTitle(this.tituloDaTela); //titulo da janela
+		tela.setSize(265, 600);	//tamanho da janela
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.setResizable(false);
 
@@ -94,7 +91,6 @@ public class TelaTabuada {
 		// Criar o Scrollpane que vai receber o JList
 		scrollTabuada = new JScrollPane(listTabuada);
 		scrollTabuada.setBounds(20, 200, 210, 340);
-		
 
 		// Adicionando elementos na janela
 		container.add(labelMultiplicando);
@@ -111,27 +107,40 @@ public class TelaTabuada {
 		container.add(scrollTabuada);
 
 		// Adicionando escutantes de ação aos botões
-		buttonCalcular.addActionListener(new ActionListener() {
+		buttonCalcular.addActionListener(new ActionListener() { //Funcionamento do botão Calcular
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//Coletando os valores nos campos
+				// Coletando os valores nos campos
 				String multiplicando = textMultiplicando.getText();
 				String minMultiplicador = textMinMultiplicador.getText();
-				String maxMultiplicador =  textMaxMultiplicador.getText();
-				
-				//Convertendo os valores para double
+				String maxMultiplicador = textMaxMultiplicador.getText();
+
+				// Convertendo os valores para double
 				double multiplicandoDouble = Double.parseDouble(multiplicando);
 				double minMultiplicadorDouble = Double.parseDouble(minMultiplicador);
 				double maxMultiplicadorDouble = Double.parseDouble(maxMultiplicador);
-				
-				//Fonecendo os valores para a tabuada
+
+				// Fonecendo os valores para a tabuada
 				Tabuada tabuada = new Tabuada(multiplicandoDouble, minMultiplicadorDouble, maxMultiplicadorDouble);
-				
-				//Trazer a tabuada e colocar na tela
+
+				// Trazer a tabuada e colocar na tela
 				String[] tabuadaVisual = tabuada.mostrarTabuada();
 				listTabuada.setListData(tabuadaVisual);
+
+			}
+		});
+		buttonLimpar.addActionListener(new ActionListener() { //Funcionamento do botão limpar
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//Limpando os campos de input do usuário
+				textMultiplicando.setText(null);
+				textMinMultiplicador.setText(null);
+				textMaxMultiplicador.setText(null);
 				
+				//Limpando campo do output
+				listTabuada.setListData(new String[0]);
 			}
 		});
 
