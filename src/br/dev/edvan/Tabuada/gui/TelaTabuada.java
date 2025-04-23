@@ -121,7 +121,7 @@ public class TelaTabuada {
 				double minMultiplicadorDouble = Double.parseDouble(minMultiplicador);
 				double maxMultiplicadorDouble = Double.parseDouble(maxMultiplicador);
 
-				// Fonecendo os valores para a tabuada
+				// Fornecendo os valores para a tabuada
 				Tabuada tabuada = new Tabuada(multiplicandoDouble, minMultiplicadorDouble, maxMultiplicadorDouble);
 
 				// Trazer a tabuada e colocar na tela

@@ -55,19 +55,17 @@ public class Tabuada {
 
 	// Retornar a tabuada com os cálculos
 	public String[] mostrarTabuada() {
-		if (multiplicadorMinimo > multiplicadorMaximo) {
+		if (multiplicadorMinimo > multiplicadorMaximo) { //Troca das variáveis caso o input esteja invertido
 			double troca = multiplicadorMinimo;
 			multiplicadorMinimo = multiplicadorMaximo;
 			multiplicadorMaximo = troca;
 		}
 		
+		//Declarando array para enviar a interface gráfica
 		int tamanhoTabuada = (int) (multiplicadorMaximo - multiplicadorMinimo +1);
 		String[] tabuada = new String[tamanhoTabuada];
 
-//		System.out.println("===========================");
-//		System.out.println("TABUADA DO " + multiplicando);
-//		System.out.println("---------------------------");
-
+		//Calculo e montagem do array para enviar a interface gráfica 
 		double produto;
 		int i = 0;
 		while (i < tamanhoTabuada) { // loop
